@@ -7,9 +7,9 @@
     </div>
 </template>
 <script>
-import {computed, ref} from 'vue'
 
-import './style.css'
+import {computed, ref} from 'vue'
+import './assets/style.css'
 
 import WrongLetters from './components/WrongLetters'
 import Word from './components/Word'
@@ -17,7 +17,9 @@ import Notification from './components/Notification'
 import Popup from './components/Popup'
 
 
-import onKeyDown from './components/onKeyDown'
+import onKeyDown from './assets/onKeyDown'
+
+
 const words = ['progr']
 const randomWord = () => words[Math.floor(Math.random() * words.length)]
 export default {
@@ -35,7 +37,9 @@ export default {
     const correctLetters = computed(() =>
       guessedLetters.value.filter(l => letters.value.includes(l))
     )
-
+    const lives = computed(() =>{
+      return  5 - wrongLetters.value.length
+    })
     const status = computed(() => {
       if(wrongLetters.value.length === 5){
         return 'lose'
@@ -72,6 +76,7 @@ export default {
       wrongLetters,
       correctLetters,
       guessedLetters,
+      lives,
       notification,
       status,
       reset

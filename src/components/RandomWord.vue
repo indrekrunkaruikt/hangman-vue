@@ -25,8 +25,11 @@ export default {
             })
         }
     },
-    onLoad: {
+    onLoad(){
+ console.log(this.$appName)
+
     }
+    
 }
 </script>
 

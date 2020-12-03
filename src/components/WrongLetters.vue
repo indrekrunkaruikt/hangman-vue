@@ -15,8 +15,8 @@
 export default {
     props: {
         wrongLetters: {type: Array, default: () => []},
-    }
-
+        lives: {type: Number, default:5}
+    },
 }
 </script>
 
