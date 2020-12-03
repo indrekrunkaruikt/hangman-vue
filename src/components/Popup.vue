@@ -3,7 +3,7 @@
     <div class="popup">
       <h2>{{ finalMessage }}</h2>
       <h3 v-show="status === 'lose'">The word was: {{ word }}</h3>
-      <button @click="reset">Play Again</button>
+      <h3>Refresh the page to try again</h3>
     </div>
   </div>
 </template>
