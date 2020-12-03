@@ -1,5 +1,6 @@
-import {onMounted, onUnmounted} from 'vue'
+// This is used to interpet keyboard presses.
 
+import {onMounted, onUnmounted} from 'vue'
 
 export default function onKeyDown(handler){
 
